@@ -97,7 +97,7 @@ print("                                                      Welcome to Cinnamor
 object = str(input("                                                                                 What would you like to purchase?: "))
 
 
-# 
+# After selecting a drink or snack, this is the part where it finalizes your order 
 if object in Menus:
     selected_Menus = Menus[object]
     print("                                                                                ==========°❀⋆.ೃ࿔*:･°❀⋆.ೃ࿔*:･°❀⋆.ೃ࿔*:･==========")
@@ -109,19 +109,21 @@ else:
     print("That's not available in Cinnamoroll's Vending Machine. Please enter and select items within the Menus.")
 
 
-#
+# The payment method 
 while amount > 0:
-        payment = float(input(f"                                                                                       Please insert an amount ${amount:.2f}: "))
+        payment = float(input(f"                                                                                    Please insert an amount ${amount:.2f}: "))
         if payment >= amount:
             change = payment - amount
-            print(f"                                                                    Thank you for your purchase! Please come again next time! Your change is ${change:.2f}.")
+            print(f"                                                                 Thank you for your purchase! Please come again next time! Your change is ${change:.2f}.")
 
             selected_Menus['Stock'] -= 1
-            print(f"                                                                    There's currently {selected_Menus['Stock']} remaining stocks of {selected_Menus['Name']}.")
+            print(f"                                                           There's currently {selected_Menus['Stock']} remaining stocks of {selected_Menus['Name']}. Don't hesitate to order some more!!")
             break
         else:
-            print("Insufficient payment. Please insert more.")
+            print("                                                                                    Insufficient payment. Please insert more.") #also added this feature when inputted money is in short
             amount -= payment
+            continue
+            print("                                                                             That's the right amount, thank you for being a responsible citizen! Enjoy your snack!")
 
 print("""                                                                                                       
                                                     ▀▀█▀▀ █░░█ █▀▀█ █▀▀▄ █░█ 　 █░░█ █▀▀█ █░░█ 　 █▀▀ █▀▀█ █▀▀█ 　 █░░█ █▀▀ ░▀░ █▀▀▄ █▀▀▀ 　 █▀▀█ █░░█ █▀▀█ 
@@ -131,4 +133,4 @@ print("""
                                                     █▀▀ █▀▀ █▀▀█ ▀█░█▀ ░▀░ █▀▀ █▀▀ 　 █▀▀█ █▀▀▄ █▀▀▄ 　 █▀▀ ▀▀█▀▀ █▀▀█ █▀▀█ █▀▀█ ░▀░ █▀▀▄ █▀▀▀ 　 █▀▀▄ █░░█ █ 
                                                     ▀▀█ █▀▀ █▄▄▀ ░█▄█░ ▀█▀ █░░ █▀▀ 　 █▄▄█ █░░█ █░░█ 　 ▀▀█ ░░█░░ █░░█ █░░█ █░░█ ▀█▀ █░░█ █░▀█ 　 █▀▀▄ █▄▄█ ▀ 
                                                     ▀▀▀ ▀▀▀ ▀░▀▀ ░░▀░░ ▀▀▀ ▀▀▀ ▀▀▀ 　 ▀░░▀ ▀░░▀ ▀▀▀░ 　 ▀▀▀ ░░▀░░ ▀▀▀▀ █▀▀▀ █▀▀▀ ▀▀▀ ▀░░▀ ▀▀▀▀ 　 ▀▀▀░ ▄▄▄█ ▄""")
-#finishedd 
+#THE END OF CINNAMOROLL'S VENDING MACHINE!!!!!!!!
